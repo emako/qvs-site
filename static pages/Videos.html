@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Home</title>
+	<link rel="stylesheet" href="../public/css/reset.css">
+	<style>
+		body{
+			/* 设置字体 */
+			font:18px/1.5 Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,sans-serif;
+			background-color: #faf3c0;
+		}
+
+		/*解决高度坍塌*/
+		.clearfix::before,
+		.clearfix::after{
+			content: '';
+			display: table;
+			clear: both;
+		}
+
+		/*导航条外部容器*/
+		.top-bar-wrapper{
+			width: 100%;
+			background-color: #fd71c5;
+			/* 设置行高=高度，文字垂直居中 */
+			height: 50px;
+			line-height: 50px;
+			opacity: 0.9;
+			position:fixed;
+			top: 0;
+			z-index: 9999;
+		}
+
+		/*导航条内部容器*/
+		.navbar{
+			width:960px;
+			/*左右居中*/
+			margin: 0 auto;
+			opacity: 0.9;
+		}
+		
+		.navbar li{
+			float:left;
+			line-height:50px;
+		}
+		
+		.navbar a {
+			/*转换为块元素*/
+			display: block;
+			/*去除下划线*/
+			text-decoration: none;
+			color: #F2F2F2;
+			font-size: 23px;
+			/*用padding设置<a>宽度*/
+			padding: 0 40px;
+		}
+		
+		.navbar a:hover{
+			background-color: #ff2cab;
+			color: #F2F2F2;
+		}
+
+		/*Tutorial下拉框*/
+		/*设置tutorial-btn与tutorial-more同宽度*/
+        .tutorial-btn{
+            width: 120px;
+            text-align: center;
+        }
+        .tutorial-main .tutorial-more{
+            width: 200px;
+            height: 100px;
+            background-color: #fd71c5;
+            text-align: center;
+            display: none;
+            /*设置绝对定位，使其不占据页面位置*/
+            position: absolute;
+            top:50px;
+            z-index: 999;
+        }
+
+		/*当鼠标移入Tutorial，下拉框显示*/
+		/*hover设置在父元素Tutorial上鼠标移开Tutorial，tutorial-more不消失*/
+		.tutorial-main:hover .tutorial-more{
+			display: block;
+		}
+		/*设置tutorial-btn的移入的效果*/
+		/*hover设置在父元素tutorial-main上鼠标移开tutorial-btn，tutorial-btn效果不消失*/
+		.tutorial-main:hover .tutorial-btn{
+			background-color: #ff2cab;
+			color: #F2F2F2;
+		}
+
+		/*------------设置文字内容----------------*/
+		.content{
+			width: 800px;
+			margin: 50px auto 0;
+		}
+
+		.content img{
+			display: block;
+			width: 256px;
+			margin: 0 auto;
+		}
+
+		h2{
+			text-align: center;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="top-bar-wrapper">
+		<ul class="navbar clearfix">
+			<li><a href="./Home.html">HOME</a></li>
+			<li>
+				<div class="tutorial-main">
+					<a class="tutorial-btn" href="./Screenshot.html">Tutorial</a>
+					<div class="tutorial-more">
+						<a href="./Videos.html">Videos</a>
+						<a href="./Screenshot.html">Screenshot</a>
+					</div>
+				</div>
+			</li>
+			<li><a href="./Download.html">Download</a></li>
+			<li><a href="./About.html">About egosub</a></li>
+		</ul>
+	</div>
+	<div class="content">
+		<div class="header-img"><a href="./Home.html"><img src="../public/img/qvs.png" alt="egosub"></a></div>
+		<h2>Coming Soon</h2>
+		</div>
+	
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Text</title>
+	<link rel="stylesheet" href="../public/css/reset.css">
+	<style>
+		body{
+			/* 设置字体 */
+			font:18px/1.5 Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,sans-serif;
+			background-color: #faf3c0;
+		}
+
+		/*解决高度坍塌*/
+		.clearfix::before,
+		.clearfix::after{
+			content: '';
+			display: table;
+			clear: both;
+		}
+
+		/*导航条外部容器*/
+		.top-bar-wrapper{
+			width: 100%;
+			background-color: #fd71c5;
+			/* 设置行高=高度，文字垂直居中 */
+			height: 50px;
+			line-height: 50px;
+			opacity: 0.9;
+			position:fixed;
+			top: 0;
+			z-index: 9999;
+		}
+
+		/*导航条内部容器*/
+		.navbar{
+			width:960px;
+			/*左右居中*/
+			margin: 0 auto;
+			opacity: 0.9;
+		}
+		
+		.navbar li{
+			float:left;
+			line-height:50px;
+		}
+		
+		.navbar a {
+			/*转换为块元素*/
+			display: block;
+			/*去除下划线*/
+			text-decoration: none;
+			color: #F2F2F2;
+			font-size: 23px;
+			/*用padding设置<a>宽度*/
+			padding: 0 40px;
+		}
+		
+		.navbar a:hover{
+			background-color: #ff2cab;
+			color: #F2F2F2;
+		}
+
+		/*Tutorial下拉框*/
+		/*设置tutorial-btn与tutorial-more同宽度*/
+        .tutorial-btn{
+            width: 120px;
+            text-align: center;
+        }
+        .tutorial-main .tutorial-more{
+            width: 200px;
+            height: 100px;
+            background-color: #fd71c5;
+            text-align: center;
+            display: none;
+            /*设置绝对定位，使其不占据页面位置*/
+            position: absolute;
+            top:50px;
+            z-index: 999;
+        }
+
+		/*当鼠标移入Tutorial，下拉框显示*/
+		/*hover设置在父元素Tutorial上鼠标移开Tutorial，tutorial-more不消失*/
+		.tutorial-main:hover .tutorial-more{
+			display: block;
+		}
+		/*设置tutorial-btn的移入的效果*/
+		/*hover设置在父元素tutorial-main上鼠标移开tutorial-btn，tutorial-btn效果不消失*/
+		.tutorial-main:hover .tutorial-btn{
+			background-color: #ff2cab;
+			color: #F2F2F2;
+		}
+
+		/*-------设置左导航条------------*/
+		.left-nav{
+			width:200px;
+			padding:10px 0;
+			background-color:#fd71c5;
+			opacity: 0.8;
+			position: fixed;
+			left: 50px;
+			top:150px;
+			z-index: 999;
+			border: 10px white solid;
+			border-radius: 20%;
+		}
+
+		.left-nav ul{
+			width: 200px;
+			margin: 30px auto;
+
+		}
+
+		.left-nav a{
+			display: block;
+			color: #232222;
+			text-decoration: none;
+			font-weight: bold;
+			line-height: 20px;
+			text-align: center;
+		}
+
+		.left-nav a:hover{
+			color: white;
+		}
+
+		.left-nav .line{
+			width: 150px;
+			height: 3px;
+			background-color: white;
+			margin: 15px auto;
+		}
+
+		/*------------设置文字内容----------------*/
+		.content{
+			width: 800px;
+			margin: 50px auto;
+			padding-left: 280px;
+		}
+
+		.header-img img{
+			display: block;
+			width: 256px;
+			margin: 0 auto;
+		}
+
+		h2{
+			text-align: center;
+			font-size: 30px;
+			text-shadow: 1px 1px 2px rgba(0,0,0,.5);
+		}
+
+		h3{
+			text-align: left;
+			font-size: 20px;
+			text-shadow: 1px 1px 2px rgba(0,0,0,.5);
+			line-height: 2;
+			padding-top: 50px;
+		}
+
+		.screen-shot img{
+			width: 100%;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="top-bar-wrapper">
+		<ul class="navbar clearfix">
+			<li><a href="./Home.html">HOME</a></li>
+			<li>
+				<div class="tutorial-main">
+					<a class="tutorial-btn" href="./Screenshot.html">Tutorial</a>
+					<div class="tutorial-more">
+						<a href="./Videos.html">Videos</a>
+						<a href="./Screenshot.html">Screenshot</a>
+					</div>
+				</div>
+			</li>
+			<li><a href="./Download.html">Download</a></li>
+			<li><a href="./About.html">About egosub</a></li>
+		</ul>
+	</div>
+	<!--	left navigation		-->
+	<nav class="left-nav">
+		<ul>
+			<li><a href="#main-encode">Main UI</a></li>
+			<div class="line"></div>
+		</ul>
+		<ul>
+			<li><a href="#mead-info">Mediainfo UI</a></li>
+			<div class="line"></div>
+		</ul>
+		<ul>
+			<li><a href="#add-job">Create Script from Add New Job</a></li>
+			<div class="line"></div>
+		</ul>
+		<ul>
+			<li><a href="#script-blockly">Create Script from blockly UI</a></li>
+			<div class="line"></div>
+		</ul>
+		<ul>
+			<li><a href="#script-mount">Script Mount UI</a></li>
+			<div class="line"></div>
+		</ul>
+		<ul>
+			<li><a href="#script-preview">Script Preview UI</a></li>
+		</ul>
+
+	</nav>
+	<div class="content">
+		<div class="header-img"><a href="./Home.html"><img src="../public/img/qvs.png" alt="egosub"></a></div>
+		<div class="screen-shot">
+			<h2>Screen Shot</h2>
+			<div id="main-encode">
+				<h3>Main UI</h3>
+				<hr>
+				<img src="../public/img/main-encode.jpg" alt="">
+			</div>
+			<div id="mead-info">
+				<h3>Mediainfo UI</h3>
+				<hr>
+				<img src="../public/img/mediainfo.jpg" alt="">
+			</div>
+			<div id="add-job">
+				<h3>Create Script from Add New Job</h3>
+				<hr>
+				<img src="../public/img/add-job.jpg" alt="">
+			</div>
+			<div id="script-blockly">
+				<h3>Create Script from blockly UI</h3>
+				<hr>
+				<img src="../public/img/script-blockly.png" alt="">
+			</div>
+			<div id="script-mount">
+				<h3>Script Mount UI</h3>
+				<hr>
+				<img src="../public/img/script-mount.jpg" alt="">
+			</div>
+			<div id="script-preview">
+				<h3>Script Preview UI</h3>
+				<hr>
+				<img src="../public/img/script-preview.jpg" alt="">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
