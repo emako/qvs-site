@@ -2,7 +2,7 @@
   <div class="content">
     <div class="header-img">
       <router-link to="/home"><img src="@/../public/img/qvs.png" alt="egosub"></router-link>
-      </div>
+    </div>
     <h1>qvs</h1>
     <h2>A simple program for using VapourSynth/Avisynth Script previewed and encoded.</h2>
     <br>
@@ -22,41 +22,61 @@
 </template>
 
 <script>
-  export default {
-    name: "Home"
-  }
+export default {
+  name: "Home"
+}
 </script>
 
 <style scoped>
-    .content{
-      width: 800px;
-      margin: 50px auto 0;
-    }
+.content {
+  width: 800px;
+  margin: 50px auto 0;
+}
 
-    .content img{
-      display: block;
-      width: 256px;
-      margin: 0 auto;
-    }
+.header-img img {
+  display: block;
+  width: 256px;
+  margin: 0 auto;
+}
 
-    h1{
-      text-align: center;
-      font-size: 50px;
-      text-shadow: 1px 2px 2px rgba(0,0,0,.5);
-    }
-    h2{
-      text-align: center;
-    }
+h1 {
+  text-align: center;
+  font-size: 50px;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, .5);
+}
 
-    .main-features{
-      text-align: center;
-      font-size: 30px;
-      text-shadow: 1px 1px 2px rgba(0,0,0,.5);
-    }
+h2 {
+  text-align: center;
+}
 
-    .content ul{
-      list-style: circle;
-      margin-left: 30px;
+.main-features {
+  text-align: center;
+  font-size: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+}
 
-    }
+.content ul {
+  list-style: circle;
+  margin-left: 30px;
+
+}
+
+/*set logo animation*/
+.header-img img:hover {
+  animation: swing 1s forwards infinite;
+}
+
+@keyframes swing {
+  from, to, 50% {
+    transform: rotateZ(0deg);
+  }
+
+  25% {
+    transform: rotateZ(10deg);
+  }
+
+  75% {
+    transform: rotateZ(-10deg);
+  }
+}
 </style>

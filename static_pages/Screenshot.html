@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Text</title>
+	<title>Screenshot</title>
 	<link rel="stylesheet" href="../public/css/reset.css">
 	<style>
 		body{
@@ -39,12 +39,12 @@
 			margin: 0 auto;
 			opacity: 0.9;
 		}
-		
+
 		.navbar li{
 			float:left;
 			line-height:50px;
 		}
-		
+
 		.navbar a {
 			/*转换为块元素*/
 			display: block;
@@ -55,7 +55,7 @@
 			/*用padding设置<a>宽度*/
 			padding: 0 40px;
 		}
-		
+
 		.navbar a:hover{
 			background-color: #ff2cab;
 			color: #F2F2F2;
@@ -63,26 +63,29 @@
 
 		/*Tutorial下拉框*/
 		/*设置tutorial-btn与tutorial-more同宽度*/
-        .tutorial-btn{
-            width: 120px;
-            text-align: center;
-        }
-        .tutorial-main .tutorial-more{
-            width: 200px;
-            height: 100px;
-            background-color: #fd71c5;
-            text-align: center;
-            display: none;
-            /*设置绝对定位，使其不占据页面位置*/
-            position: absolute;
-            top:50px;
-            z-index: 999;
-        }
+		.tutorial-btn{
+			width: 120px;
+			text-align: center;
+		}
+		.tutorial-main .tutorial-more{
+			width: 200px;
+			height: 0;
+			overflow: hidden;
+			transition: height 0.3s;
+
+			background-color: #fd71c5;
+			text-align: center;
+			/*设置绝对定位，使其不占据页面位置*/
+			position: absolute;
+			top: 50px;
+			z-index: 999;
+		}
 
 		/*当鼠标移入Tutorial，下拉框显示*/
 		/*hover设置在父元素Tutorial上鼠标移开Tutorial，tutorial-more不消失*/
 		.tutorial-main:hover .tutorial-more{
 			display: block;
+			height: 100px;
 		}
 		/*设置tutorial-btn的移入的效果*/
 		/*hover设置在父元素tutorial-main上鼠标移开tutorial-btn，tutorial-btn效果不消失*/
@@ -162,87 +165,106 @@
 			width: 100%;
 		}
 
+		/*set logo animation*/
+		.header-img img:hover {
+			animation:swing 1s forwards infinite;
+		}
+
+		@keyframes swing {
+			from, to, 50%{
+				transform: rotateZ(0deg);
+			}
+
+			25% {
+				transform: rotateZ(10deg);
+			}
+
+			75% {
+				transform: rotateZ(-10deg);
+			}
+		}
+
 	</style>
 </head>
 <body>
-	<div class="top-bar-wrapper">
-		<ul class="navbar clearfix">
-			<li><a href="./Home.html">HOME</a></li>
-			<li>
-				<div class="tutorial-main">
-					<a class="tutorial-btn" href="./Screenshot.html">Tutorial</a>
-					<div class="tutorial-more">
-						<a href="./Videos.html">Videos</a>
-						<a href="./Screenshot.html">Screenshot</a>
-					</div>
+<div class="top-bar-wrapper">
+	<ul class="navbar clearfix">
+		<li><a href="./Home.html">HOME</a></li>
+		<li>
+			<div class="tutorial-main">
+				<a class="tutorial-btn" href="./Screenshot.html">Tutorial</a>
+				<div class="tutorial-more">
+					<a href="./Videos.html">Videos</a>
+					<a href="./Screenshot.html">Screenshot</a>
 				</div>
-			</li>
-			<li><a href="./Download.html">Download</a></li>
-			<li><a href="./About.html">About egosub</a></li>
-		</ul>
-	</div>
-	<!--	left navigation		-->
-	<nav class="left-nav">
-		<ul>
-			<li><a href="#main-encode">Main UI</a></li>
-			<div class="line"></div>
-		</ul>
-		<ul>
-			<li><a href="#mead-info">Mediainfo UI</a></li>
-			<div class="line"></div>
-		</ul>
-		<ul>
-			<li><a href="#add-job">Create Script from Add New Job</a></li>
-			<div class="line"></div>
-		</ul>
-		<ul>
-			<li><a href="#script-blockly">Create Script from blockly UI</a></li>
-			<div class="line"></div>
-		</ul>
-		<ul>
-			<li><a href="#script-mount">Script Mount UI</a></li>
-			<div class="line"></div>
-		</ul>
-		<ul>
-			<li><a href="#script-preview">Script Preview UI</a></li>
-		</ul>
+			</div>
+		</li>
+		<li><a href="./Download.html">Download</a></li>
+		<li><a href="./About.html">About egosub</a></li>
+	</ul>
+</div>
+<!--	left navigation		-->
+<nav class="left-nav">
+	<ul>
+		<li><a href="#main-encode">Main UI</a></li>
+		<div class="line"></div>
+	</ul>
+	<ul>
+		<li><a href="#mead-info">Mediainfo UI</a></li>
+		<div class="line"></div>
+	</ul>
+	<ul>
+		<li><a href="#add-job">Create Script from Add New Job</a></li>
+		<div class="line"></div>
+	</ul>
+	<ul>
+		<li><a href="#script-blockly">Create Script from blockly UI</a></li>
+		<div class="line"></div>
+	</ul>
+	<ul>
+		<li><a href="#script-mount">Script Mount UI</a></li>
+		<div class="line"></div>
+	</ul>
+	<ul>
+		<li><a href="#script-preview">Script Preview UI</a></li>
+	</ul>
 
-	</nav>
-	<div class="content">
-		<div class="header-img"><a href="./Home.html"><img src="../public/img/qvs.png" alt="egosub"></a></div>
-		<div class="screen-shot">
-			<h2>Screen Shot</h2>
-			<div id="main-encode">
-				<h3>Main UI</h3>
-				<hr>
-				<img src="../public/img/main-encode.jpg" alt="">
-			</div>
-			<div id="mead-info">
-				<h3>Mediainfo UI</h3>
-				<hr>
-				<img src="../public/img/mediainfo.jpg" alt="">
-			</div>
-			<div id="add-job">
-				<h3>Create Script from Add New Job</h3>
-				<hr>
-				<img src="../public/img/add-job.jpg" alt="">
-			</div>
-			<div id="script-blockly">
-				<h3>Create Script from blockly UI</h3>
-				<hr>
-				<img src="../public/img/script-blockly.png" alt="">
-			</div>
-			<div id="script-mount">
-				<h3>Script Mount UI</h3>
-				<hr>
-				<img src="../public/img/script-mount.jpg" alt="">
-			</div>
-			<div id="script-preview">
-				<h3>Script Preview UI</h3>
-				<hr>
-				<img src="../public/img/script-preview.jpg" alt="">
-			</div>
+</nav>
+<div class="content">
+	<div class="header-img"><a href="./Home.html"><img src="../public/img/qvs.png" alt="egosub"></a></div>
+	<div class="screen-shot">
+		<h2>Screen Shot</h2>
+		<div id="main-encode">
+			<h3>Main UI</h3>
+			<hr>
+			<img src="../public/img/main-encode.jpg" alt="">
+		</div>
+		<div id="mead-info">
+			<h3>Mediainfo UI</h3>
+			<hr>
+			<img src="../public/img/mediainfo.jpg" alt="">
+		</div>
+		<div id="add-job">
+			<h3>Create Script from Add New Job</h3>
+			<hr>
+			<img src="../public/img/add-job.jpg" alt="">
+		</div>
+		<div id="script-blockly">
+			<h3>Create Script from blockly UI</h3>
+			<hr>
+			<img src="../public/img/script-blockly.png" alt="">
+		</div>
+		<div id="script-mount">
+			<h3>Script Mount UI</h3>
+			<hr>
+			<img src="../public/img/script-mount.jpg" alt="">
+		</div>
+		<div id="script-preview">
+			<h3>Script Preview UI</h3>
+			<hr>
+			<img src="../public/img/script-preview.jpg" alt="">
 		</div>
 	</div>
+</div>
 </body>
 </html>

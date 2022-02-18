@@ -15,19 +15,21 @@
         <div class="line"></div>
       </ul>
       <ul>
-        <li><a  @click="anchor('#script-blockly')">Create Script from blockly UI</a></li>
+        <li><a @click="anchor('#script-blockly')">Create Script from blockly UI</a></li>
         <div class="line"></div>
       </ul>
       <ul>
-        <li><a  @click="anchor('#script-mount')">Script Mount UI</a></li>
+        <li><a @click="anchor('#script-mount')">Script Mount UI</a></li>
         <div class="line"></div>
       </ul>
       <ul>
-        <li><a  @click="anchor('#script-preview')">Script Preview UI</a></li>
+        <li><a @click="anchor('#script-preview')">Script Preview UI</a></li>
       </ul>
     </nav>
     <div class="content">
-      <div class="header-img"><router-link to="/home"><img src="@/../public/img/qvs.png" alt="egosub"></router-link></div>
+      <div class="header-img">
+        <router-link to="/home"><img src="@/../public/img/qvs.png" alt="egosub"></router-link>
+      </div>
       <div class="screen-shot">
         <h2>Screen Shot</h2>
         <div id="main-encode">
@@ -66,91 +68,111 @@
 </template>
 
 <script>
-  export default {
-    name: "Screenshot",
-    methods:{
-      //anchor point positioning function
-      anchor(idValue) {
-        const returnEle = document.querySelector(idValue);
-        if (!!returnEle) {
-          returnEle.scrollIntoView(true);
-        }
-        document.querySelector(idValue).scrollIntoView(true);
+export default {
+  name: "Screenshot",
+  methods: {
+    //anchor point positioning function
+    anchor(idValue) {
+      const returnEle = document.querySelector(idValue);
+      if (!!returnEle) {
+        returnEle.scrollIntoView(true);
       }
+      document.querySelector(idValue).scrollIntoView(true);
     }
   }
+}
 </script>
 
 <style scoped>
-  /*-------设置左导航条------------*/
-  .left-nav{
-    width:200px;
-    padding:10px 0;
-    background-color:#fd71c5;
-    opacity: 0.8;
-    position: fixed;
-    left: 50px;
-    top:150px;
-    z-index: 999;
-    border: 10px white solid;
-    border-radius: 20%;
+/*-------设置左导航条------------*/
+.left-nav {
+  width: 200px;
+  padding: 10px 0;
+  background-color: #fd71c5;
+  opacity: 0.8;
+  position: fixed;
+  left: 50px;
+  top: 150px;
+  z-index: 999;
+  border: 10px white solid;
+  border-radius: 20%;
+}
+
+.left-nav ul {
+  width: 200px;
+  margin: 30px auto;
+
+}
+
+.left-nav a {
+  display: block;
+  color: #232222;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.left-nav a:hover {
+  color: white;
+}
+
+.left-nav .line {
+  width: 150px;
+  height: 3px;
+  background-color: white;
+  margin: 15px auto;
+}
+
+/*------------设置文字内容----------------*/
+.content {
+  width: 800px;
+  height: 1500px;
+  margin: 50px auto;
+  padding-left: 280px;
+}
+
+.header-img img {
+  display: block;
+  width: 256px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+}
+
+h3 {
+  text-align: left;
+  font-size: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+  line-height: 2;
+  padding-top: 50px;
+}
+
+.screen-shot img {
+  width: 100%;
+}
+
+/*set logo animation*/
+.header-img img:hover {
+  animation: swing 1s forwards infinite;
+}
+
+@keyframes swing {
+  from, to, 50% {
+    transform: rotateZ(0deg);
   }
 
-  .left-nav ul{
-    width: 200px;
-    margin: 30px auto;
-
+  25% {
+    transform: rotateZ(10deg);
   }
 
-  .left-nav a{
-    display: block;
-    color: #232222;
-    text-decoration: none;
-    font-weight: bold;
-    line-height: 20px;
-    text-align: center;
-    cursor: pointer;
+  75% {
+    transform: rotateZ(-10deg);
   }
-
-  .left-nav a:hover{
-    color: white;
-  }
-
-  .left-nav .line{
-    width: 150px;
-    height: 3px;
-    background-color: white;
-    margin: 15px auto;
-  }
-  /*------------设置文字内容----------------*/
-  .content{
-    width: 800px;
-    height: 1500px;
-    margin: 50px auto;
-    padding-left: 280px;
-  }
-
-  .header-img img{
-    display: block;
-    width: 256px;
-    margin: 0 auto;
-  }
-
-  h2{
-    text-align: center;
-    font-size: 30px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,.5);
-  }
-
-  h3{
-    text-align: left;
-    font-size: 20px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,.5);
-    line-height: 2;
-    padding-top: 50px;
-  }
-
-  .screen-shot img{
-    width: 100%;
-  }
+}
 </style>
