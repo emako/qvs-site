@@ -33,12 +33,6 @@ export default {
   margin: 50px auto 0;
 }
 
-.header-img img {
-  display: block;
-  width: 256px;
-  margin: 0 auto;
-}
-
 h1 {
   text-align: center;
   font-size: 50px;
@@ -59,24 +53,5 @@ h2 {
   list-style: circle;
   margin-left: 30px;
 
-}
-
-/*set logo animation*/
-.header-img img:hover {
-  animation: swing 1s forwards infinite;
-}
-
-@keyframes swing {
-  from, to, 50% {
-    transform: rotateZ(0deg);
-  }
-
-  25% {
-    transform: rotateZ(10deg);
-  }
-
-  75% {
-    transform: rotateZ(-10deg);
-  }
 }
 </style>

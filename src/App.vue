@@ -19,4 +19,29 @@
     font:18px/1.5 Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,sans-serif;
     background-color: #faf3c0;
   }
+
+  .header-img img {
+    display: block;
+    width: 256px;
+    margin: 0 auto;
+  }
+
+  /*set logo animation*/
+  .header-img img:hover {
+    animation: swing 1s forwards infinite;
+  }
+
+  @keyframes swing {
+    from, to, 50% {
+      transform: rotateZ(0deg);
+    }
+
+    25% {
+      transform: rotateZ(10deg);
+    }
+
+    75% {
+      transform: rotateZ(-10deg);
+    }
+  }
 </style>
