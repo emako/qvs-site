@@ -1,0 +1,284 @@
+//set variable
+@light-pink: #fd71c5;
+@dark-pink: #ff2cab;
+@yellow-white: #faf3c0;
+@word-white: #f2f2f2;
+
+//=======set body=========
+body {
+  // set font, background-color
+  font: 18px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, sans-serif;
+  background-color: @yellow-white;
+}
+
+//=======set banner=========
+//--------common banner settings----------
+//outer container
+.top-bar-wrapper {
+  width: 100%;
+  background-color: @light-pink;
+  opacity: 0.95;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  margin-bottom: 1px @light-pink solid;
+}
+
+//set title
+.title {
+  a {
+    height: 35px;
+    line-height: 35px;
+    color: @word-white;
+    font-size: 35px;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+  }
+}
+
+//top bar
+.top-bar {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 50px;
+  padding: 0 14px;
+  background-color: @light-pink;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+//set <a> tags in navbar
+.navbar li a {
+  display: block;
+  text-decoration: none;
+  color: @word-white;
+
+  &:hover {
+    color: @word-white;
+    background-color: @dark-pink;
+  }
+}
+
+//----------width<768px---------
+//left menu
+.left-menu {
+  //show navbar
+  &.active {
+    .navbar {
+      display: block;
+      height: 267px;
+    }
+  }
+
+  .navbar {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    background-color: @light-pink;
+
+    //Screenshots Videos padding-left
+    .tutorial-more a {
+      padding-left: 30px;
+    }
+
+    li {
+      width: 80%;
+      margin: 0 auto;
+      border-bottom: 1px solid #757474;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      a {
+        line-height: 44px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  //menu icon
+  .menu-icon {
+    width: 18px;
+    height: 50px;
+
+    // menu icon line
+    li {
+      width: 18px;
+      height: 1px;
+      background-color: white;
+      position: absolute;
+
+      // set transition
+      transform-origin: left center;
+      transition: 0.5s
+    }
+
+    li:nth-child(1) {
+      top: 18px;
+    }
+
+    li:nth-child(2) {
+      top: 24px;
+    }
+
+    li:nth-child(3) {
+      top: 30px;
+    }
+
+    //click menu-icon
+    &.active {
+      li:nth-child(1) {
+        top: 18px;
+        //rotate first line
+        transform: rotateZ(40deg);
+      }
+
+      li:nth-child(2) {
+        top: 24px;
+        //hide middle line
+        opacity: 0;
+      }
+
+      li:nth-child(3) {
+        top: 30px;
+        //rotate third line
+        transform: rotateZ(-40deg);
+      }
+    }
+
+  }
+}
+
+//-------width>=768px------------
+//set media queries
+@media only screen {
+  //set breakpoint
+  @media (min-width: 768px) {
+    //hide menu icon
+    .menu-icon {
+      display: none;
+    }
+
+    //set title on the left side of  navbar
+    .title {
+      order: 1;
+    }
+
+    .right-menu {
+      order: 3;
+    }
+
+    //set left menu at the center of navbar
+    .left-menu {
+      order: 2;
+      flex: auto;
+
+      .navbar {
+        //reset overflow
+        overflow: visible;
+        display: flex;
+        height: 50px;
+        position: static;
+        align-items: center;
+        justify-content: space-around;
+
+        li {
+          width: 100%;
+          border-bottom: none;
+          //set the width of tutorial more menu = the width of li(tutorial-main) [1]
+          position: relative;
+
+          a {
+            line-height: 50px;
+            text-align: center;
+            font-size: 21px;
+          }
+        }
+        //reset padding-left
+        .tutorial-more a {
+          padding-left:0;
+        }
+
+      }
+
+      .tutorial-more {
+        //set the width of tutorial more menu = the width of li(tutorial-main) [2]
+        width: 100%;
+
+        height: 0;
+        overflow: hidden;
+        transition: height 0.5s;
+        background-color: @light-pink;
+        position: absolute;
+        top: 50px;
+        z-index: 999;
+
+      }
+
+      //show tutorial-more dropdown menu
+      .tutorial-main:hover .tutorial-more {
+        display: block;
+        height: 100px;
+      }
+    }
+  }
+}
+
+//==============set content==================
+.content {
+  width: 80%;
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+.header-img img {
+  display: block;
+  width: 256px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 50px;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, .5);
+}
+
+h3 {
+  text-align: center;
+}
+
+.main-features {
+  text-align: center;
+  font-size: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+}
+
+.content ul {
+  list-style: circle;
+  margin-left: 30px;
+}
+
+//----------set logo animation------
+.header-img img:hover {
+  animation: swing 1s forwards infinite;
+}
+
+@keyframes swing {
+  from, to, 50% {
+    transform: rotateZ(0deg);
+  }
+
+  25% {
+    transform: rotateZ(10deg);
+  }
+
+  75% {
+    transform: rotateZ(-10deg);
+  }
+}

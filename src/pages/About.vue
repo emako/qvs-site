@@ -17,8 +17,15 @@ export default {
 
 <style scoped>
 .content {
-  width: 800px;
+  width: 80%;
+  max-width: 800px;
   margin: 50px auto;
+}
+
+.header-img img {
+  display: block;
+  width: 256px;
+  margin: 0 auto;
 }
 
 a {

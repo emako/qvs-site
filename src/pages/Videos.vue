@@ -3,7 +3,7 @@
     <div class="header-img">
       <router-link to="/home"><img src="@/../public/img/qvs.png" alt="egosub"></router-link>
     </div>
-    <h2>Coming Soon</h2>
+    <h2>Coming Soon...</h2>
   </div>
 </template>
 
@@ -15,8 +15,15 @@ export default {
 
 <style scoped>
 .content {
-  width: 800px;
-  margin: 50px auto 0;
+  width: 80%;
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+.header-img img {
+  display: block;
+  width: 256px;
+  margin: 0 auto;
 }
 
 h2 {

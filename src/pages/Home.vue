@@ -3,8 +3,8 @@
     <div class="header-img">
       <router-link to="/home"><img src="@/../public/img/qvs.png" alt="egosub"></router-link>
     </div>
-    <h1>qvs</h1>
-    <h2>A simple program for using VapourSynth/Avisynth Script previewed and encoded.</h2>
+    <h2>qvs</h2>
+    <h3>A simple program for using VapourSynth/Avisynth Script previewed and encoded.</h3>
     <br>
     <div class="main-features">Main Features</div>
     <hr>
@@ -26,32 +26,4 @@ export default {
   name: "Home"
 }
 </script>
-
-<style scoped>
-.content {
-  width: 800px;
-  margin: 50px auto 0;
-}
-
-h1 {
-  text-align: center;
-  font-size: 50px;
-  text-shadow: 1px 2px 2px rgba(0, 0, 0, .5);
-}
-
-h2 {
-  text-align: center;
-}
-
-.main-features {
-  text-align: center;
-  font-size: 30px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
-}
-
-.content ul {
-  list-style: circle;
-  margin-left: 30px;
-
-}
-</style>
+<style scoped src="../../public/css/Home.css"></style>

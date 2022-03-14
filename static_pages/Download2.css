@@ -1,0 +1,296 @@
+body {
+  font: 18px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, sans-serif;
+  background-color: #faf3c0;
+}
+.top-bar-wrapper {
+  width: 100%;
+  background-color: #fd71c5;
+  opacity: 0.95;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  margin-bottom: 1px #fd71c5 solid;
+}
+.title a {
+  height: 35px;
+  line-height: 35px;
+  color: #f2f2f2;
+  font-size: 35px;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.top-bar {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 50px;
+  padding: 0 14px;
+  background-color: #fd71c5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar li a {
+  display: block;
+  text-decoration: none;
+  color: #f2f2f2;
+}
+.navbar li a:hover {
+  color: #f2f2f2;
+  background-color: #ff2cab;
+}
+.content {
+  padding-left: 0;
+}
+.left-menu.active .navbar {
+  display: block;
+  height: 267px;
+}
+.left-menu .navbar {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  background-color: #fd71c5;
+}
+.left-menu .navbar .tutorial-more a {
+  padding-left: 30px;
+}
+.left-menu .navbar li {
+  width: 80%;
+  margin: 0 auto;
+  border-bottom: 1px solid #757474;
+}
+.left-menu .navbar li:last-child {
+  border-bottom: none;
+}
+.left-menu .navbar li a {
+  line-height: 44px;
+  font-size: 14px;
+}
+.left-menu .menu-icon {
+  width: 18px;
+  height: 50px;
+}
+.left-menu .menu-icon li {
+  width: 18px;
+  height: 1px;
+  background-color: white;
+  position: absolute;
+  transform-origin: left center;
+  transition: 0.5s;
+}
+.left-menu .menu-icon li:nth-child(1) {
+  top: 18px;
+}
+.left-menu .menu-icon li:nth-child(2) {
+  top: 24px;
+}
+.left-menu .menu-icon li:nth-child(3) {
+  top: 30px;
+}
+.left-menu .menu-icon.active li:nth-child(1) {
+  top: 18px;
+  transform: rotateZ(40deg);
+}
+.left-menu .menu-icon.active li:nth-child(2) {
+  top: 24px;
+  opacity: 0;
+}
+.left-menu .menu-icon.active li:nth-child(3) {
+  top: 30px;
+  transform: rotateZ(-40deg);
+}
+.left-nav {
+  display: none;
+}
+.small-left-nav {
+  position: fixed;
+  left: 8px;
+  top: 150px;
+  z-index: 999;
+}
+.small-left-nav li {
+  width: 10px;
+  height: 10px;
+  border: 8px #fd71c5 solid;
+  background-color: #fd71c5;
+  position: relative;
+}
+.small-left-nav li:first-child {
+  border-radius: 50% 50% 0 0;
+}
+.small-left-nav li:last-child {
+  border-radius: 0 0 50% 50%;
+}
+.small-left-nav a {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+.small-left-nav a:hover {
+  background-color: #ffffff;
+}
+.small-left-nav li.highlight a {
+  background-color: #ffffff;
+}
+@media only screen {
+}
+@media only screen and (min-width: 768px) {
+  .menu-icon {
+    display: none;
+  }
+  .title {
+    order: 1;
+  }
+  .right-menu {
+    order: 3;
+  }
+  .content {
+    padding-left: 250px;
+  }
+  .small-left-nav {
+    display: none;
+  }
+  .left-menu {
+    order: 2;
+    flex: auto;
+  }
+  .left-menu .navbar {
+    overflow: visible;
+    display: flex;
+    height: 50px;
+    position: static;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .left-menu .navbar li {
+    width: 100%;
+    border-bottom: none;
+    position: relative;
+  }
+  .left-menu .navbar li a {
+    line-height: 50px;
+    text-align: center;
+    font-size: 21px;
+  }
+  .left-menu .navbar .tutorial-more a {
+    padding-left: 0;
+  }
+  .left-menu .tutorial-more {
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s;
+    background-color: #fd71c5;
+    position: absolute;
+    top: 50px;
+    z-index: 999;
+  }
+  .left-menu .tutorial-main:hover .tutorial-more {
+    display: block;
+    height: 100px;
+  }
+  .left-nav {
+    display: block;
+    width: 200px;
+    padding: 10px 0;
+    background-color: #fd71c5;
+    opacity: 0.8;
+    position: fixed;
+    left: 1%;
+    top: 150px;
+    z-index: 999;
+    border: 10px white solid;
+    border-radius: 20%;
+  }
+  .left-nav ul {
+    width: 200px;
+    margin: 30px auto;
+  }
+  .left-nav a {
+    display: block;
+    color: #232222;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 20px;
+    text-align: center;
+  }
+  .left-nav a:hover {
+    color: white;
+  }
+  .left-nav .line {
+    width: 150px;
+    height: 3px;
+    background-color: white;
+    margin: 15px auto;
+  }
+  ul li.highlight a {
+    color: white;
+  }
+}
+.content {
+  width: 80%;
+  max-width: 800px;
+  margin: 50px auto;
+}
+.content ul {
+  list-style: circle;
+  margin-left: 30px;
+}
+.header-img img {
+  display: block;
+  width: 256px;
+  margin: 0 auto;
+}
+h2 {
+  text-align: center;
+  font-size: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+h3 {
+  padding-top: 50px;
+  text-align: left;
+  font-size: 25px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.more a {
+  color: green;
+  font-size: 25px;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
+.fast-git {
+  color: green;
+  font-weight: bold;
+}
+.fast-git a {
+  text-decoration: none;
+}
+.header-img img:hover {
+  animation: swing 1s forwards infinite;
+}
+@keyframes swing {
+  from,
+  to,
+  50% {
+    transform: rotateZ(0deg);
+  }
+  25% {
+    transform: rotateZ(10deg);
+  }
+  75% {
+    transform: rotateZ(-10deg);
+  }
+}
+/*# sourceMappingURL=Download2.css.map */

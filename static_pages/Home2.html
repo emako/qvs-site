@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../public/css/reset.css">
+    <link rel="stylesheet" href="./Home2.css">
+    <script>
+        window.onload = () => {
+            const menuIcon = document.getElementsByClassName('menu-icon')[0];
+            const leftMenu = document.getElementsByClassName('left-menu')[0];
+
+            //click menuIcon open or close menu
+            menuIcon.onclick = () => {
+                if (menuIcon.classList.contains('active')) {
+                    menuIcon.classList.remove('active');
+                    leftMenu.classList.remove('active');
+                } else {
+                    menuIcon.classList.add('active');
+                    leftMenu.classList.add('active');
+                }
+            };
+
+            //click a tags to close menu
+            const aTags = document.getElementsByTagName('a');
+            for (var i = 0; i < aTags.length; i++) {
+                aTags[i].onclick = function () {
+                    menuIcon.classList.remove('active');
+                    leftMenu.classList.remove('active');
+                }
+            }
+
+            //listening click
+            document.addEventListener('click', function (e) {
+                //when menu opened
+                if (menuIcon.classList.contains('active')) {
+                    //click outside the menu,close menu
+                    if (!leftMenu.contains(e.target)) {
+                        menuIcon.classList.remove('active');
+                        leftMenu.classList.remove('active');
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<!--outer container-->
+<div class="top-bar-wrapper">
+    <!--    top bar-->
+    <div class="top-bar">
+        <!--        left menu-->
+        <div class="left-menu">
+            <!--            menu icon-->
+            <ul class="menu-icon">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <!--            navigation bar-->
+            <ul class="navbar">
+                <li><a href="./Home2.html">HOME</a></li>
+                <li class="tutorial-main">
+                    <a href="./Screenshots2.html">Tutorial</a>
+                    <div class="tutorial-more">
+                        <a href="./Screenshots2.html">Screenshots</a>
+                        <a href="./Videos.html">Videos</a>
+                    </div>
+                </li>
+                <li><a href="./Download2.html">Download</a></li>
+                <li><a href="./About.html">About egosub</a></li>
+            </ul>
+        </div>
+
+        <!--        title-->
+        <h1 class="title">
+            <a href="./Home2.html">egosub</a>
+        </h1>
+
+        <!--   right menu -->
+        <div class="right-menu"></div>
+    </div>
+</div>
+
+<!--content-->
+<div class="content">
+    <div class="header-img"><a href="./Home2.html"><img src="../public/img/qvs.png" alt="egosub"></a></div>
+    <h2>qvs</h2>
+    <h3>A simple program for using VapourSynth/Avisynth Script previewed and encoded.</h3>
+    <br>
+    <h2 class="main-features">Main Features</h2>
+    <hr>
+    <ul>
+        <li> New script(*.vpy), also using blockly, a visual programming tools.</li>
+        <li> Encode script(*.vpy) or video, also using x264/x265/NVEnc/QSVEnc/VCEEnc encoders.</li>
+        <li> Encode audio, also using AAC/MP3/ALAC/FLAC/OPUS/OGG Vorbis/AC3/WAV encoders.</li>
+        <li> Muxer video and audio, also using MP4Box/L-smash/MKVMerge/FFMpeg tools.</li>
+        <li> Demuxer video, also using FFMpeg/Eac3to/MKVExtract/TsDemux tools.</li>
+        <li> Create single image video.</li>
+        <li> Splite/Merge media file.</li>
+        <li> Show MediaInfo.</li>
+    </ul>
+</div>
+</body>
+</html>

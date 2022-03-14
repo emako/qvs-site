@@ -12,44 +12,47 @@ const router = new VueRouter({
         {
             path:'/',
             redirect:'/home',
-            meta:{title:'Egosub'}
+            meta:{title:'egosub'}
         },
         {
             name:'Home',
             path:'/home',
             component:Home,
-            meta:{title:'Egosub - Home'}
+            meta:{title:'egosub - Home'}
         },
         {
             name:'Videos',
             path:'/videos',
             component:Videos,
-            meta:{title:'Egosub - Videos'}
+            meta:{title:'egosub - Videos'}
         },
         {
             name:'Screenshot',
             path:'/screenshot',
             component:Screenshot,
-            meta:{title:'Egosub - Screenshot'}
+            meta:{title:'egosub - Screenshots'}
         },
         {
             name:'Download',
             path:'/download',
             component:Download,
-            meta:{title:'Egosub - Download'}
+            meta:{title:'egosub - Download'}
         },
         {
             name:'About',
             path:'/about',
             component:About,
-            meta:{title:'Egosub - About'}
+            meta:{title:'egosub - About'}
         }
     ]
 });
 
-//set web page title
 router.afterEach((to,from) =>{
-    document.title = to.meta.title || 'router test';
+    //set web page titles
+    document.title = to.meta.title || 'egosub';
+
+    //reset to top after go to the next page
+    window.scrollTo(0,0);
 });
 
 export default router;
