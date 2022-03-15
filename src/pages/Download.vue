@@ -38,8 +38,11 @@
           <!-- download link list	-->
           <div class="fast-git">
             FastGit:
+<!--            Unsupported by iOS-->
+<!--            <a v-for="(link,index) of d.dl" :key="index"-->
+<!--               :href="link">{{ link.match(RegExp(`(?<=${d.ver}\/)(.+)`, 'i'))[0] }}&nbsp&nbsp</a>-->
             <a v-for="(link,index) of d.dl" :key="index"
-               :href="link">{{ link.match(RegExp(`(?<=${d.ver}\/)(.+)`, 'i'))[0] }}&nbsp&nbsp</a>
+               :href="link">{{ link.match(RegExp(`(${d.ver}\/)(.+)`, 'i'))[0].replace(`(${d.ver}\/)`,'') }}&nbsp&nbsp</a>
           </div>
         </div>
       </div>
